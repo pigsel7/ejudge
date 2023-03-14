@@ -4,7 +4,7 @@ string StringXOR(string S, string K){
     string ans = "";
     
     for(int i = 0; i < n; i++){
-        ans = ans + to_string((int)(S[i] ^ K[i % m])) + " ";
+        ans = ans + (char)((int)(S[i] ^ K[i % m]));
     }
     
     return ans;
@@ -25,8 +25,8 @@ int main(){
     
     string ans = StringXOR(s, key);
     
-    for(int i = 0; i < (int)ans.size() - 1; i++){
-        printf("%c", ans[i]);
+    for(int i = 0; i < (int)ans.size(); i++){
+        printf("%d ", (int)ans[i]);
     }
     
     printf("\n");
