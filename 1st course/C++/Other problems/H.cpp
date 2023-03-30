@@ -12,7 +12,7 @@ int main(){
         
         while(n--){
             scanf("%d", &tmp);
-            if(!(tmp % 6)){
+            if(!(tmp % 6) && tmp > 0){
                 count++; sum += tmp;
             }
         }
@@ -24,3 +24,4 @@ int main(){
     
     return 0;
 }
+
