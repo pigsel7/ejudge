@@ -1,13 +1,22 @@
 double f(double n){
     double ans = 1;
-    double d = 2;
     
-    for(int i = 1; i * 2 + 1 < n; i++){
-        ans *= (n / 2 - (i + d++) / 2) / (n / 2 - i);
+    for(int i = 2; i < n - 2; i++){
+        if(i % 2){
+            ans *= i;       //
+            continue;       //  Умножаем на нечетные i и делим на четные i по полученной формуле
+        }                   //
+        ans /= i;
+    }
+    
+    if(n != 2){
+        ans /= (n - 2);     //  По формуле надо разделить на (n - 2), но надо проверить не будет ли деления на 0
     }
     
     return ans;
 }
+
+
 
 
 int main() {
@@ -15,9 +24,9 @@ int main() {
     double n;
     scanf("%lf", &n);
     
-    double ans = f(n);
+    double result = f(n);
     
-    printf("%.4lf\n", ans);
+    printf("%.4lf\n", result);
         
     
     return 0;
